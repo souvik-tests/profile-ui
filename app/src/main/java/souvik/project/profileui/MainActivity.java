@@ -21,6 +21,8 @@ import java.text.*;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ImageView;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.View;
 import com.bumptech.glide.Glide;
 
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 	private LinearLayout linear7;
 	private TextView fullname;
 	private TextView bio;
-	private TextView textview4;
+	private TextView website_url;
 	private LinearLayout webverified;
 	private LinearLayout linear10;
 	private LinearLayout linear11;
@@ -74,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
 	private LinearLayout linear25;
 	private ImageView img4;
 	private ImageView img5;
+	
+	private Intent web = new Intent();
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
@@ -98,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 		linear7 = (LinearLayout) findViewById(R.id.linear7);
 		fullname = (TextView) findViewById(R.id.fullname);
 		bio = (TextView) findViewById(R.id.bio);
-		textview4 = (TextView) findViewById(R.id.textview4);
+		website_url = (TextView) findViewById(R.id.website_url);
 		webverified = (LinearLayout) findViewById(R.id.webverified);
 		linear10 = (LinearLayout) findViewById(R.id.linear10);
 		linear11 = (LinearLayout) findViewById(R.id.linear11);
@@ -136,6 +140,14 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View _view) {
 				_initBottomSheet();
+			}
+		});
+		
+		website_url.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				web.setClass(getApplicationContext(), WebActivity.class);
+				startActivity(web);
 			}
 		});
 		
