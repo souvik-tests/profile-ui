@@ -1,0 +1,49 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<LinearLayout
+		android:id="@+id/linear1"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:gravity="center_horizontal|center_vertical"
+		android:orientation="vertical">
+		<LinearLayout
+			android:id="@+id/mainweb"
+			android:layout_width="match_parent"
+			android:layout_height="180dp"
+			android:padding="15dp"
+			android:gravity="center_horizontal|top"
+			android:orientation="vertical">
+			<LinearLayout
+				android:id="@+id/linear3"
+				android:layout_width="70dp"
+				android:layout_height="70dp"
+				android:padding="8dp"
+				android:background="@drawable/webverify"
+				android:orientation="horizontal"/>
+			<TextView
+				android:id="@+id/textview1"
+				android:focusable="false"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:text="Verified Business"
+				android:textSize="25sp"
+				android:textStyle="bold"
+				android:textColor="#000000"/>
+			<TextView
+				android:id="@+id/textview2"
+				android:focusable="false"
+				android:layout_width="270dp"
+				android:layout_height="wrap_content"
+				android:gravity="center_horizontal"
+				android:text="This verification badge represents that the user has an authentic business website."
+				android:textSize="12sp"
+				android:textColor="#000000"/>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

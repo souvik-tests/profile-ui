@@ -1,6 +1,7 @@
 package souvik.project.profileui;
 
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.*;
 import android.app.*;
 import android.os.*;
 import android.view.*;
@@ -20,9 +21,10 @@ import java.text.*;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ImageView;
+import android.view.View;
 import com.bumptech.glide.Glide;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 	
 	
 	private LinearLayout linear8;
@@ -40,7 +42,7 @@ public class MainActivity extends Activity {
 	private TextView fullname;
 	private TextView bio;
 	private TextView textview4;
-	private LinearLayout webverification;
+	private LinearLayout webverified;
 	private LinearLayout linear10;
 	private LinearLayout linear11;
 	private LinearLayout linear12;
@@ -97,7 +99,7 @@ public class MainActivity extends Activity {
 		fullname = (TextView) findViewById(R.id.fullname);
 		bio = (TextView) findViewById(R.id.bio);
 		textview4 = (TextView) findViewById(R.id.textview4);
-		webverification = (LinearLayout) findViewById(R.id.webverification);
+		webverified = (LinearLayout) findViewById(R.id.webverified);
 		linear10 = (LinearLayout) findViewById(R.id.linear10);
 		linear11 = (LinearLayout) findViewById(R.id.linear11);
 		linear12 = (LinearLayout) findViewById(R.id.linear12);
@@ -129,6 +131,20 @@ public class MainActivity extends Activity {
 		linear25 = (LinearLayout) findViewById(R.id.linear25);
 		img4 = (ImageView) findViewById(R.id.img4);
 		img5 = (ImageView) findViewById(R.id.img5);
+		
+		verified.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				_initBottomSheet();
+			}
+		});
+		
+		webverified.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View _view) {
+				_web_verify();
+			}
+		});
 	}
 	private void initializeLogic() {
 		Glide.with(getApplicationContext()).load(Uri.parse("https://res.cloudinary.com/souvik-network/image/upload/v1595976207/Android%20Github/Profile%20Ui/photo-1595927238580-797684d76bd8_han98w.jpg")).into(img1);
@@ -149,6 +165,30 @@ public class MainActivity extends Activity {
 			break;
 		}
 	}
+	
+	private void _initBottomSheet () {
+		final com.google.android.material.bottomsheet.BottomSheetDialog dialog = new com.google.android.material.bottomsheet.BottomSheetDialog(MainActivity.this); View lay = getLayoutInflater().inflate(R.layout.idverification, null); dialog.setContentView(lay);
+		final LinearLayout linear1 = (LinearLayout)lay.findViewById(R.id.mainview); 
+		dialog.getWindow().findViewById(R.id.design_bottom_sheet).setBackgroundResource(android.R.color.transparent);
+		dialog.show();
+		android.graphics.drawable.GradientDrawable wd = new android.graphics.drawable.GradientDrawable(); wd.setColor(Color.WHITE); wd.setCornerRadius((int)10f);
+		linear1.setBackground(wd);
+		linear2.setOnClickListener(new OnClickListener() { @Override public void onClick(View v) {
+				dialog.dismiss(); }});
+	}
+	
+	
+	private void _web_verify () {
+		final com.google.android.material.bottomsheet.BottomSheetDialog dialog = new com.google.android.material.bottomsheet.BottomSheetDialog(MainActivity.this); View lay = getLayoutInflater().inflate(R.layout.webverification, null); dialog.setContentView(lay);
+		final LinearLayout linear1 = (LinearLayout)lay.findViewById(R.id.mainweb); 
+		dialog.getWindow().findViewById(R.id.design_bottom_sheet).setBackgroundResource(android.R.color.transparent);
+		dialog.show();
+		android.graphics.drawable.GradientDrawable wd = new android.graphics.drawable.GradientDrawable(); wd.setColor(Color.WHITE); wd.setCornerRadius((int)10f);
+		linear1.setBackground(wd);
+		linear2.setOnClickListener(new OnClickListener() { @Override public void onClick(View v) {
+				dialog.dismiss(); }});
+	}
+	
 	
 	@Deprecated
 	public void showMessage(String _s) {
