@@ -8,6 +8,8 @@ Version 1.0.2
 
 This template is completely free to use. If you're making a social media application, that contains lots of photographs, this will be the perfect template for your project.
 
+<a href="https://github.com/souvik-tests/profile-ui/raw/master/demo-apk/Profile%20Ui%20Demo.apk">Download (demo)⬇️</a>
+
 # Features:
 
 * Classic looking design
